@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Button, Form } from "react-bootstrap";
 import useLocalStorage from "../hooks/useLocalStorage";
 import { ICardApp } from "../models";
+import { Link } from "react-router-dom";
 
 
 const AddCard = () => {
@@ -17,7 +18,7 @@ const AddCard = () => {
 
     const onAddCardHandle = () => {
         const newCard: ICardApp[] = [...cardList, {
-            id: +(Math.random()* 10000).toFixed(0),
+            id: +(Math.random() * 10000).toFixed(0),
             title,
             content,
             createdAt: Date.now(),
@@ -25,7 +26,12 @@ const AddCard = () => {
         }]
         setCardList(newCard);
         setTitle('');
-        setContent('')
+        setContent('');
+    }
+
+    const onCancelHandle = () => {
+        setTitle('');
+        setContent('');
     }
 
     return (
@@ -38,8 +44,14 @@ const AddCard = () => {
                 <Form.Label>Текст карточки</Form.Label>
                 <Form.Control as="textarea" rows={3} value={content} onChange={(e) => onChangeHandle(e.target.value, setContent)} />
             </Form.Group>
-            <Button variant="primary" onClick={onAddCardHandle}>Создать каточку</Button>
-            <Button variant="secondary">Отменить</Button>
+
+            <Button href="/" variant="primary" onClick={onAddCardHandle}>
+                Создать каточку
+            </Button>
+
+            <Link to="/" onClick={onCancelHandle}>
+                <Button variant="secondary">Отменить</Button>
+            </Link>
         </Form>
     )
 }

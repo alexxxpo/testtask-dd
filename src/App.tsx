@@ -5,22 +5,29 @@ import { ICardApp } from './models';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AddCard from './components/AddCard';
 import useLocalStorage from './hooks/useLocalStorage';
+import Header from './components/Header';
+import { Route, Routes } from 'react-router-dom';
+import MainPage from './pages/MainPage';
+import AddPage from './pages/AddPage';
+import EditPage from './pages/EditPage';
 
 
 
 
 function App() {
 
-  const [cardList] = useLocalStorage([], 'cardList');
 
-  console.log(cardList);
 
 
   return (
-    <div className="d-flex justify-content-center">
-      <CardList cardList={cardList || []} />
-      <AddCard />
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route path='/' element={<MainPage />} />
+        <Route path='/add' element={<AddPage />} />
+        <Route path='/edit' element={<EditPage />} />
+      </Routes>
+    </>
   );
 }
 
