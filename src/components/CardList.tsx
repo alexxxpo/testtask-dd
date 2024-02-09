@@ -8,12 +8,12 @@ interface ICardListProps {
 }
 
 export default function CardList({ cardList }: ICardListProps) {
-    if (cardList.length !== 0) {
+    if (cardList.length > 0) {
         return (
             <ListGroup>
                 {cardList?.map((card, i) => {
                     return <ListGroup.Item key={i}>
-                        <CardApp title={card.title} content={card.content} createdAt={card.createdAt} editedAt={card.editedAt} />
+                        <CardApp id={card.id} title={card.title} content={card.content} createdAt={card.createdAt} editedAt={card.editedAt} />
                     </ListGroup.Item>
                 })}
             </ListGroup>

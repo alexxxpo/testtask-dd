@@ -1,11 +1,8 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
+import { ICardApp } from "../models";
 
-interface ICardAppProps {
-  title: string;
-  content?: string;
-  createdAt?: Date;
-  editedAt?: Date;
+interface ICardAppProps extends ICardApp {
   onEdit?: () => {};
   onDelete?: () => {};
 }
