@@ -1,10 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import CardList from './components/CardList';
-import { ICardApp } from './models';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AddCard from './components/AddCard';
-import useLocalStorage from './hooks/useLocalStorage';
 import Header from './components/Header';
 import { Route, Routes } from 'react-router-dom';
 import MainPage from './pages/MainPage';

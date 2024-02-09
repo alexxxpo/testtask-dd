@@ -3,6 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
 import { ICardApp, ILocationState } from "../models";
+import currentDateTime from "../utils/currentDateTime";
 
 export default function EditCard(props: ILocationState) {
 
@@ -20,7 +21,7 @@ export default function EditCard(props: ILocationState) {
             if (card.id === props.id) {
                 card.title = title;
                 card.content = content;
-                card.editedAt = Date.now();
+                card.editedAt = currentDateTime();
             };
             return card;
         });
@@ -46,7 +47,7 @@ export default function EditCard(props: ILocationState) {
                 <Form.Control as="textarea" rows={3} value={content} onChange={(e) => onChangeHandle(e.target.value, setContent)} />
             </Form.Group>
 
-            <Button variant="primary" onClick={onEditCardHandle}>
+            <Button href="/" variant="primary" onClick={onEditCardHandle}>
                 Сохранить изменения
             </Button>
 

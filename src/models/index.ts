@@ -2,8 +2,8 @@ export interface ICardApp {
     id: number;
     title: string;
     content: string;
-    createdAt: Date | number;
-    editedAt: Date | number;
+    createdAt: Date | string;
+    editedAt: Date | string;
 }
 
 export interface ILocationState {

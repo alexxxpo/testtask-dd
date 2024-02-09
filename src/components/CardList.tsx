@@ -14,7 +14,7 @@ export default function CardList({ cardList,onDeleteHandle }: ICardListProps) {
             <ListGroup>
                 {cardList?.map((card, i) => {
                     return <ListGroup.Item key={i}>
-                        <CardApp id={card.id} title={card.title} content={card.content} createdAt={card.createdAt} editedAt={card.editedAt} onDelete={onDeleteHandle}/>
+                        <CardApp {...card} onDelete={onDeleteHandle}/>
                     </ListGroup.Item>
                 })}
             </ListGroup>

@@ -3,6 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import useLocalStorage from "../hooks/useLocalStorage";
 import { ICardApp } from "../models";
 import { Link } from "react-router-dom";
+import currentDateTime from "../utils/currentDateTime";
 
 
 const AddCard = () => {
@@ -21,8 +22,8 @@ const AddCard = () => {
             id: +(Math.random() * 10000).toFixed(0),
             title,
             content,
-            createdAt: Date.now(),
-            editedAt: Date.now()
+            createdAt: currentDateTime(),
+            editedAt: currentDateTime(),
         }]
         setCardList(newCard);
         setTitle('');
