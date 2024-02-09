@@ -8,7 +8,7 @@ interface ICardListProps {
     onDeleteHandle: (id: number) => void;
 }
 
-export default function CardList({ cardList,onDeleteHandle }: ICardListProps) {
+function CardList({ cardList,onDeleteHandle }: ICardListProps) {
     if (cardList.length > 0) {
         return (
             <ListGroup>
@@ -23,6 +23,6 @@ export default function CardList({ cardList,onDeleteHandle }: ICardListProps) {
     return <div>
             Нет ни одной карточки
         </div>
-    
-
 }
+
+export default React.memo(CardList)

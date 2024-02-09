@@ -36,24 +36,27 @@ const AddCard = () => {
     }
 
     return (
-        <Form>
-            <Form.Group className="mb-3">
-                <Form.Label>Название</Form.Label>
-                <Form.Control placeholder="Введите название" value={title} onChange={(e) => onChangeHandle(e.target.value, setTitle)} />
-            </Form.Group>
-            <Form.Group className="mb-3">
-                <Form.Label>Текст карточки</Form.Label>
-                <Form.Control as="textarea" rows={3} value={content} onChange={(e) => onChangeHandle(e.target.value, setContent)} />
-            </Form.Group>
+        <div style={{ margin: "0 auto", maxWidth: 600 }}>
 
-            <Button href="/" className="me-5" variant="primary" onClick={onAddCardHandle}>
-                Создать каточку
-            </Button>
+            <Form>
+                <Form.Group className="mb-3">
+                    <Form.Label>Название</Form.Label>
+                    <Form.Control placeholder="Введите название" value={title} onChange={(e) => onChangeHandle(e.target.value, setTitle)} />
+                </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Label>Текст карточки</Form.Label>
+                    <Form.Control as="textarea" rows={3} value={content} onChange={(e) => onChangeHandle(e.target.value, setContent)} />
+                </Form.Group>
 
-            <Link to="/" onClick={onCancelHandle}>
-                <Button variant="secondary">Отменить</Button>
-            </Link>
-        </Form>
+                <Button href="/" className="me-5" variant="primary" onClick={onAddCardHandle}>
+                    Создать каточку
+                </Button>
+
+                <Link to="/" onClick={onCancelHandle}>
+                    <Button variant="secondary">Отменить</Button>
+                </Link>
+            </Form>
+        </div>
     )
 }
 
