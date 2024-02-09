@@ -14,8 +14,7 @@ function App() {
 
 
   return (
-    <>
-      <Header />
+    <>     
       <Routes>
         <Route path='/' element={<MainPage />} />
         <Route path='/add' element={<AddPage />} />

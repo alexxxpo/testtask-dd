@@ -47,7 +47,7 @@ export default function EditCard(props: ILocationState) {
                 <Form.Control as="textarea" rows={3} value={content} onChange={(e) => onChangeHandle(e.target.value, setContent)} />
             </Form.Group>
 
-            <Button href="/" variant="primary" onClick={onEditCardHandle}>
+            <Button href="/" className="me-5" variant="primary" onClick={onEditCardHandle}>
                 Сохранить изменения
             </Button>
 

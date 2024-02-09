@@ -1,6 +1,8 @@
 import useLocalStorage from "../hooks/useLocalStorage";
 import CardList from "../components/CardList";
 import { ICardApp } from "../models";
+import Header from "../components/Header";
+import React from "react";
 
 const MainPage = () => {
 
@@ -12,9 +14,12 @@ const MainPage = () => {
         setCardList(newArray);
     }
 
-    return (<div className="d-flex justify-content-center">
+    return (<div >
+        <Header cardList={cardList} setCardList={setCardList} />
+        <div className="d-flex justify-content-center" >
         <CardList cardList={cardList || []} onDeleteHandle={onDeleteHandle}/>
+        </div>
     </div>);
 }
 
-export default MainPage;
+export default React.memo(MainPage);
